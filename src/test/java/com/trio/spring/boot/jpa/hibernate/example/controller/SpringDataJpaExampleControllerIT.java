@@ -84,7 +84,7 @@ class SpringDataJpaExampleControllerIT {
 
         ResponseEntity<Long> response = restTemplate.postForEntity(createUrl(""), request, Long.class);
         
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertNotNull(response.getBody());
         assertTrue(response.getBody() > 0);
     }

@@ -1,9 +1,11 @@
 package com.trio.spring.boot.jpa.hibernate.example.controller;
 
+import com.trio.spring.boot.jpa.hibernate.example.controller.api.EntityManagerOperationsExampleApi;
 import com.trio.spring.boot.jpa.hibernate.example.data.dto.UserRequest;
 import com.trio.spring.boot.jpa.hibernate.example.data.dto.UserResponse;
 import com.trio.spring.boot.jpa.hibernate.example.service.EntityManagerOperationsExampleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/users/entity-manager")
-public class EntityManagerOperationsExampleController {
+public class EntityManagerOperationsExampleController implements EntityManagerOperationsExampleApi {
 
     private final EntityManagerOperationsExampleService entityManagerOperationsExampleService;
 
@@ -28,7 +30,7 @@ public class EntityManagerOperationsExampleController {
 
     @PostMapping
     public ResponseEntity<Long> createUser(@RequestBody UserRequest userRequest) {
-        return ResponseEntity.ok(entityManagerOperationsExampleService.saveUser(userRequest).getId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(entityManagerOperationsExampleService.saveUser(userRequest).getId());
     }
 
     @PutMapping("/{userId}")
