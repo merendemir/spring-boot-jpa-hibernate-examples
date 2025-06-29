@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.trio</groupId>
-	<artifactId>spring.boot.jpa.hibernate.example</artifactId>
+	<artifactId>spring-boot-jpa-hibernate-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring boot jpa hibernate example</name>
-	<description>Spring Boot JPA Hibernate The Power of the Trio Example</description>
+	<description>Spring Boot JPA Hibernate The Power of the Trio Example</description>
 	<url/>
 	<licenses>
 		<license/>

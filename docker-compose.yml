@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  app:
+    image: 'trio-examples-application:latest'
+    build:
+      context: .
+    ports:
+      - "2703:2703"
